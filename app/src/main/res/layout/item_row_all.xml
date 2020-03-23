@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_margin="3dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imgproduct"
+            android:src="@drawable/custom_background_banner"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+        </ImageView>
+        <TextView
+            android:maxLength="14"
+            android:layout_margin="3dp"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:text="Tên sản phẩm"
+            android:textSize="20sp"
+            android:id="@+id/tvnameproduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:text="Giá sản phẩm"
+            android:id="@+id/tvprince"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

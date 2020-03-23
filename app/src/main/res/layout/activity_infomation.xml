@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.InfomationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#C7F2FF"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@android:drawable/ic_input_add"
+            android:id="@+id/imgsanpham"
+            android:layout_width="150dp"
+            android:layout_height="200dp">
+
+        </ImageView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Tên sản phẩm"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:id="@+id/tvtensp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:text="Giá sản phẩm"
+                android:textColor="#FC0000"
+                android:textSize="20sp"
+                android:id="@+id/tvgia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:text="Kích thước"
+                android:textSize="20sp"
+                android:id="@+id/tvkichthuoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:text="Loại"
+                android:textSize="20sp"
+                android:id="@+id/tvloaisp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:text="Giới tính"
+                android:textSize="20sp"
+                android:id="@+id/tvgioitinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <Button
+                android:ems="9"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:text="Thêm vào giỏ hàng"
+                android:id="@+id/btnthemgiohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

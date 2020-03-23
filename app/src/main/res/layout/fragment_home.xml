@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="#E8FFF4"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:scrollbars="none"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/linearlayouthome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/fragmentbanner"
+            android:name="com.example.myshopart.Fragment.mainfragment.Fragment_Banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Thời trang nữ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <fragment
+            android:name="com.example.myshopart.Fragment.mainfragment.FragmentProductGirl"
+            android:id="@+id/fragmentproductnu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tvgetallgirl"
+            android:textSize="20sp"
+            android:text="Xem tất cả >>"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Thời trang nam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <fragment
+            android:name="com.example.myshopart.Fragment.mainfragment.FragmentProductBoy"
+            android:id="@+id/fragmentproductnam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tvgetallboy"
+            android:textSize="20sp"
+            android:text="Xem tất cả >>"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+
+</ScrollView>
