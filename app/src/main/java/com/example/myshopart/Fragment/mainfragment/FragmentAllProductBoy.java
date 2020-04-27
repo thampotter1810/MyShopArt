@@ -52,6 +52,7 @@ public class FragmentAllProductBoy extends Fragment {
     int currentItem, totalItem, scrollOutItem;
     mHandler mHandler;
     boolean limitData = false;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

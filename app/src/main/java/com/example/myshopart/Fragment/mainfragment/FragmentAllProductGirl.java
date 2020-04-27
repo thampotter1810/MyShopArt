@@ -156,29 +156,29 @@ public class FragmentAllProductGirl extends Fragment {
         listCall.enqueue(new Callback<List<SanPham>>() {
             @Override
             public void onResponse(Call<List<SanPham>> call, Response<List<SanPham>> response) {
-               if (response != null && !response.body().isEmpty()){
-                   //ArrayList<SanPham> sanPhams = (ArrayList<SanPham>) response.body();
-                   list.addAll(response.body());
-                   gridLayoutManager = new GridLayoutManager(getContext(),2);
-                   gridLayoutManager.setOrientation(RecyclerView.VERTICAL);
-                   adapter = new AllProductAdapter2(list,getContext());
-                   recyclerView.setLayoutManager(gridLayoutManager);
-                   adapter.notifyDataSetChanged();
-                   adapter.setOnItemClickListener(new AllProductAdapter2.ItemClickListener() {
-                       @Override
-                       public void onItemClick(int position, String masp) {
-                           Intent intent = new Intent(getActivity(), InfomationActivity.class);
-                           intent.putExtra("sanpham", list.get(position));
-                           startActivity(intent);
-                       }
-                   });
-                   progressBar.setVisibility(View.INVISIBLE);
-                   recyclerView.setAdapter(adapter);
-               }else {
-                   limitData = true;
-                   CheckConnection.ShowAlert(getActivity(),"Đã hết dữ liệu");
-                   progressBar.setVisibility(View.INVISIBLE);
-               }
+                if (response != null && !response.body().isEmpty()){
+                    //ArrayList<SanPham> sanPhams = (ArrayList<SanPham>) response.body();
+                    list.addAll(response.body());
+                    gridLayoutManager = new GridLayoutManager(getContext(),2);
+                    gridLayoutManager.setOrientation(RecyclerView.VERTICAL);
+                    adapter = new AllProductAdapter2(list,getContext());
+                    recyclerView.setLayoutManager(gridLayoutManager);
+                    adapter.notifyDataSetChanged();
+                    adapter.setOnItemClickListener(new AllProductAdapter2.ItemClickListener() {
+                        @Override
+                        public void onItemClick(int position, String masp) {
+                            Intent intent = new Intent(getActivity(), InfomationActivity.class);
+                            intent.putExtra("sanpham", list.get(position));
+                            startActivity(intent);
+                        }
+                    });
+                    progressBar.setVisibility(View.INVISIBLE);
+                    recyclerView.setAdapter(adapter);
+                }else {
+                    limitData = true;
+                    CheckConnection.ShowAlert(getActivity(),"Đã hết dữ liệu");
+                    progressBar.setVisibility(View.INVISIBLE);
+                }
 
             }
 

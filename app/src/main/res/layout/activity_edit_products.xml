@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activity.EditProductsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbaredit"
+        android:background="#C5EDFF"
+        app:title="Chỉnh sửa"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:background="#F1FFEC"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="Chỉnh sửa thông tin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <EditText
+            android:hint="Mã sản phẩm"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededitmasanpham"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Tên sản phẩm"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededittensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+            android:hint="Giá bán"
+            android:inputType="number"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededitgiaban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </EditText>
+        <EditText
+            android:hint="Kích thước"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededitkichthuoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Chất liệu"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededitchatlieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Số lượng"
+            android:inputType="number"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:id="@+id/ededitsoluong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnedithuy"
+                android:background="@drawable/custom_button2"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Hủy"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btneditxacnhan"
+                android:background="@drawable/custom_button2"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Xác nhận"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

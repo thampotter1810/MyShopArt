@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/icontimkiem"
+        android:id="@+id/menuseachview"
+        app:showAsAction="always" android:title="search"
+        app:actionViewClass="android.widget.SearchView">
+
+    </item>
+
+
+    <item android:icon="@drawable/refresh"
+        android:id="@+id/menusetting"
+        app:showAsAction="never"
+        android:title="Cài đặt">
+
+    </item>
+</menu>

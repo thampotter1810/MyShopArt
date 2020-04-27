@@ -87,13 +87,14 @@ public class Fragment_Banner extends Fragment {
                 adapter = new BannerAdapter(getContext(), spquangcao);
                 viewPager.setAdapter(adapter);
                 circleIndicator.setViewPager(viewPager);
+                //circleIndicator.setAnimation();
                 handler = new Handler();
                 runnable = new Runnable() {
                     @Override
                     public void run() {
                         curentitem = viewPager.getCurrentItem();
                         curentitem++;
-                        if (curentitem >= viewPager.getAdapter().getCount()){
+                        if (curentitem >= 5){
                             curentitem = 0;
                         }
                         viewPager.setCurrentItem(curentitem, true);

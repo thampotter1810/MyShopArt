@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.LoginActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="#03A9F4"
+        app:title="Đăng nhập"
+        android:id="@+id/toolbarlogin"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutlogin"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginBottom="25dp"
+                android:text="Đăng Nhập"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <EditText
+                android:inputType="textEmailAddress"
+                android:hint="Tên đăng nhập/email..."
+                android:id="@+id/edemailuser"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="textPassword"
+                android:hint="Mật khẩu"
+                android:id="@+id/edpassword"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+
+            <Button
+                android:textColor="#fff"
+                android:text="Đăng nhập"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                android:background="@drawable/custom_button"
+                android:id="@+id/btnlogin"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="5"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:background="#A2A2A2"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp">
+
+                </View>
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Hoặc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <View
+                    android:background="#A2A2A2"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp">
+
+                </View>
+
+            </LinearLayout>
+
+            <com.google.android.gms.common.SignInButton
+                android:layout_marginTop="15dp"
+                android:id="@+id/btnlogingoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:padding="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Chưa có tài khoản??"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvdangky"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#2459F7"
+                    android:text="Đăng ký ngay"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvboqua"
+                    android:textStyle="italic"
+                    android:textColor="#0063FD"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Bỏ qua đăng nhập... >>"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_alignParentRight="true">
+
+                </TextView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progressbarlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true">
+
+        </ProgressBar>
+    </FrameLayout>
+</LinearLayout>

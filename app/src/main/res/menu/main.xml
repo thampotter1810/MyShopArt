@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_settings"
+
+    <item android:icon="@drawable/icontimkiem"
+        android:id="@+id/menuseachview"
+        app:showAsAction="always"
+        android:title="search">
+
+    </item>
+
+    <item android:id="@+id/menu_manager"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item android:id="@+id/menu_reload"
-        android:orderInCategory="100"
-        android:title="làm mới"
-        android:icon="@drawable/ic_autorenew_black_24dp"
+        android:title="Quản lý"
+        android:icon="@drawable/manager"
         app:showAsAction="always"
         />
+    <item
+        android:id="@+id/menu_reload"
+        android:orderInCategory="100"
+        android:icon="@drawable/refresh"
+        android:title="@string/action_settings"
+        app:showAsAction="always" />
 </menu>

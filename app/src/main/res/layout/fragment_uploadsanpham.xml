@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imgupload"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_error"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+
+        </ImageView>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:hint="Mã sản phẩm"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:id="@+id/eduploadmasanpham"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Tên sản phẩm"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/eduploadtensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <EditText
+            android:hint="Giá bán"
+            android:inputType="number"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/eduploadgiaban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </EditText>
+        <EditText
+            android:hint="Kích thước"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/eduploadkichthuoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Chất liệu"
+            android:inputType="text"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/eduploadchatlieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:hint="Số lượng"
+            android:inputType="number"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/eduploadsoluong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <LinearLayout
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:id="@+id/rduploadnam"
+                    android:checked="true"
+                    android:text="Nam"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </RadioButton>
+                <RadioButton
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:layout_gravity="center"
+                    android:id="@+id/rduploadnu"
+                    android:text="Nữ"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_gravity="center"
+                android:text="Loại:"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <Spinner
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/spinner"
+                android:padding="2dp"
+                android:textAlignment="center"
+                android:id="@+id/spinnerupload"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
+            android:textAllCaps="false"
+            android:text="Thêm sản phẩm"
+            android:textSize="25sp"
+            android:ems="10"
+            android:id="@+id/btnupload"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+    </LinearLayout>
+
+</ScrollView>

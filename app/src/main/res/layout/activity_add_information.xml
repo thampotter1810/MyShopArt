@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.AddInformationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="#fff"
+        app:title="Thêm thông tin"
+        android:id="@+id/toolbaraddinforuser"
+        android:background="#6578FF"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:textColor="#1421A8"
+                android:gravity="center"
+                android:textSize="40sp"
+                android:text="Thêm thông tin cá nhân"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <EditText
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:hint="Họ và tên"
+                android:gravity="center"
+                android:id="@+id/edaddhoten"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:hint="Số điện thoại"
+                android:gravity="center"
+                android:id="@+id/edaddsdt"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:hint="Địa chỉ"
+                android:gravity="center"
+                android:id="@+id/edadddiachi"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+
+            <Button
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/custom_button"
+                android:layout_marginTop="30dp"
+                android:text="Xác nhận"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:id="@+id/btnxacnhan"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progressbaraddinforuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true">
+
+        </ProgressBar>
+    </FrameLayout>
+
+</LinearLayout>

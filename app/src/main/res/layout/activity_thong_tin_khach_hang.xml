@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#EEEEEE"
+    tools:context=".Activity.ThongTinKhachHangActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarthongtinkhachhang"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="30dp"
+            android:background="#DCF8E6"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="Thông tin khách hàng"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#fff">
+
+            </View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:inputType="text"
+                android:id="@+id/edhoten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext"
+                android:gravity="center"
+                android:hint="Họ tên"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:inputType="number"
+                android:id="@+id/edsdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext"
+                android:gravity="center"
+                android:hint="SDT"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ giao hàng"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:inputType="text"
+                android:id="@+id/eddiachi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext"
+                android:gravity="center"
+                android:hint="Địa chỉ"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <EditText
+                android:inputType="textEmailAddress"
+                android:id="@+id/edemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext"
+                android:gravity="center"
+                android:hint="Email"
+                android:textSize="25sp"
+                android:textStyle="bold">
+
+            </EditText>
+
+            <TextView
+                android:textColor="#FF0000"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:text="Phương thức thanh toán"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RadioButton
+                        android:id="@+id/rdpaypal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thanh toán qua Paypal"
+                        android:textSize="20sp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/rdoffline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thanh toán khi nhận hàng"
+                        android:textSize="20sp">
+
+                    </RadioButton>
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressbardathang"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ProgressBar>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="@drawable/custom_button"
+            android:textAllCaps="false"
+            android:text="Hủy"
+            android:textSize="25sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/btncancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+        </View>
+
+        <Button
+            android:background="@drawable/custom_button"
+            android:text="Tiếp tục"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            android:layout_weight="1"
+            android:id="@+id/btnok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

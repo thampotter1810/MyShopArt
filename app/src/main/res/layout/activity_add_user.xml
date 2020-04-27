@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.AddUserActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="#03A9F4"
+        app:title="Đăng Ký"
+        android:id="@+id/toolbardangky"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginBottom="25dp"
+                android:text="Đăng Ký"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <EditText
+                android:inputType="text"
+                android:hint="Tên đăng nhập"
+                android:id="@+id/edadduser"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="textPassword"
+                android:hint="Mật khẩu"
+                android:id="@+id/edaddpassword"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="textPassword"
+                android:hint="Xác nhận mật khẩu"
+                android:id="@+id/edaddpassword2"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:inputType="textEmailAddress"
+                android:hint="Email: example@email.com"
+                android:id="@+id/edaddemail"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/btnsignup"
+                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:text="Xác nhận"
+                android:background="@drawable/custom_button"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+        </LinearLayout>
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progressbardangky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true">
+
+        </ProgressBar>
+
+    </FrameLayout>
+
+</LinearLayout>
