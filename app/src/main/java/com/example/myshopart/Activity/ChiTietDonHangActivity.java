@@ -44,7 +44,7 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
     ChiTietDonHangAdapter adapter;
 
     TextView tvTongtien, tvDiachi, tvSdt, tvTrangthai;
-    Button btnHuy, btnXacnhan;
+    Button btnHuy, btnXacnhan, btnHuyDonHang;
     DonHang donHang;
     private static final int REQUEST_PHONE_CALL = 1;
 
@@ -56,7 +56,16 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         anhXa();
 
         Intent intent = getIntent();
-        donHang = (DonHang) intent.getSerializableExtra("donhang");
+        Bundle bundle = intent.getBundleExtra("data");
+        int key = bundle.getInt("key");
+        if (key == 1){
+            btnXacnhan.setVisibility(View.VISIBLE);
+            btnHuyDonHang.setVisibility(View.INVISIBLE);
+        }else {
+            btnXacnhan.setVisibility(View.INVISIBLE);
+            btnHuyDonHang.setVisibility(View.VISIBLE);
+        }
+        donHang = (DonHang) bundle.getSerializable("donhang");
         setUpToolBar(donHang.getTenkhachhang());
 
         getData();
@@ -108,6 +117,59 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
                                             Toast.makeText(ChiTietDonHangActivity.this, "Đã xác nhận đơn hàng", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
                                             Intent intent = new Intent(ChiTietDonHangActivity.this, QuanLyActivity.class);
+                                            startActivity(intent);
+
+                                            finish();
+                                        }else {
+                                            Toast.makeText(ChiTietDonHangActivity.this, "Không thành công vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show();
+                                            dialog.dismiss();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Integer> call, Throwable t) {
+
+                                    }
+                                });
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Hủy",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+
+        btnHuyDonHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder builder1 = new AlertDialog.Builder(ChiTietDonHangActivity.this);
+                builder1.setMessage("Bạn có chắc chắn muốn hủy đơn hàng???");
+                builder1.setCancelable(true);
+                builder1.setIcon(R.drawable.ic_alert);
+                builder1.setTitle("Hủy đơn hàng");
+
+                builder1.setPositiveButton(
+                        "Đồng ý",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int id) {
+                                DataService dataService = APIService.getService();
+                                Call<Integer> callback = dataService.XacNhanDonHang(donHang.getIddonhang());
+                                callback.enqueue(new Callback<Integer>() {
+                                    @Override
+                                    public void onResponse(Call<Integer> call, Response<Integer> response) {
+                                        if (response.body() == 1){
+                                            Toast.makeText(ChiTietDonHangActivity.this, "Hủy đơn hàng thành công", Toast.LENGTH_SHORT).show();
+                                            dialog.dismiss();
+                                            Intent intent = new Intent(ChiTietDonHangActivity.this, DonHangActivity.class);
+                                            intent.putExtra("email", MainActivity.email+"");
                                             startActivity(intent);
 
                                             finish();
@@ -197,5 +259,6 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         tvTrangthai = findViewById(R.id.tvtrangthai);
         btnHuy = findViewById(R.id.btnhuy);
         btnXacnhan = findViewById(R.id.btnxacnhanchitiet);
+        btnHuyDonHang = findViewById(R.id.btnhuydonhang);
     }
 }

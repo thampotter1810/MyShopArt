@@ -10,6 +10,9 @@ import com.example.myshopart.Models.ThongTinKhachHang;
 import com.example.myshopart.R;
 import com.example.myshopart.Services.APIService;
 import com.example.myshopart.Services.DataService;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -32,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgavatar;
     TextView tvhoten, tvemail;
     NavigationView navigationView;
+    Button btndangxuat;
     View header;
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -118,7 +123,46 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        if (email.equals("")){
+            btndangxuat.setVisibility(View.INVISIBLE);
+        }
+        logOutOnclick();
 
+    }
+
+    private void logOutOnclick() {
+        btndangxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dangXuat();
+            }
+        });
+    }
+
+    private void dangXuat() {
+        if (LoginActivity.ok == 1){
+            imgavatar.setImageResource(R.drawable.ic_launcher_foreground_21);
+            tvhoten.setText("Bạn chưa đăng nhập");
+            tvemail.setText("");
+            username = "";
+            email = "";
+            hoten = "";
+            sdt = "";
+            diachi = "";
+            avatar = "";
+            Toast.makeText(MainActivity.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
+        }else {
+            imgavatar.setImageResource(R.drawable.ic_launcher_foreground_21);
+            tvhoten.setText("Bạn chưa đăng nhập");
+            tvemail.setText("");
+            username = "";
+            email = "";
+            hoten = "";
+            sdt = "";
+            diachi = "";
+            avatar = "";
+            Toast.makeText(MainActivity.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void getInforUser() {
@@ -148,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
         imgavatar = header.findViewById(R.id.imageView);
         tvemail = header.findViewById(R.id.tvemaildadangnhap);
         tvhoten = header.findViewById(R.id.tvhotendadangnhap);
+        btndangxuat = navigationView.findViewById(R.id.btnlogout);
     }
 
     @Override
@@ -178,6 +223,11 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Chức năng này chỉ dành cho admin", Toast.LENGTH_SHORT).show();
             }
+        }
+        if (item.getItemId() == R.id.menu_donhang){
+            Intent intent = new Intent(MainActivity.this, DonHangActivity.class);
+            intent.putExtra("email", email+"");
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

@@ -3,6 +3,7 @@ package com.example.myshopart.Services;
 import com.example.myshopart.Models.ChiTietDonHang;
 import com.example.myshopart.Models.DonHang;
 import com.example.myshopart.Models.KhachHang;
+import com.example.myshopart.Models.NhanXet;
 import com.example.myshopart.Models.SanPham;
 import com.example.myshopart.Models.ThongTinKhachHang;
 
@@ -122,5 +123,21 @@ public interface DataService {
     @POST("Server/xacnhandonhang.php")
     Call<Integer> XacNhanDonHang(@Field("iddonhang") String iddonhang);
 
+    @FormUrlEncoded
+    @POST("Server/layhinhanhsanpham.php")
+    Call<ArrayList<String>> GetHinhAnh(@Field("masp") String masp);
 
+    @FormUrlEncoded
+    @POST("Server/danhsachdonhangcanhan.php")
+    Call<ArrayList<DonHang>> GetDanhSachDonHangCaNhan(@Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("Server/danhsachbinhluan.php")
+    Call<ArrayList<NhanXet>> GetDanhSachBinhLuan(@Field("masp") String masp);
+
+    @FormUrlEncoded
+    @POST("Server/thembinhluan.php")
+    Call<Integer> ThemBinhLuan(@Field("masp") String masp,
+                                          @Field("email") String email,
+                                          @Field("noidung") String noidung);
 }

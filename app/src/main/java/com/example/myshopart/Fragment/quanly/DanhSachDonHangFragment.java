@@ -49,7 +49,10 @@ public class DanhSachDonHangFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ChiTietDonHangActivity.class);
-                intent.putExtra("donhang", list.get(position));
+                Bundle bundle = new Bundle();
+                bundle.putInt("key", 1);
+                bundle.putSerializable("donhang", list.get(position));
+                intent.putExtra("data", bundle);
                 startActivity(intent);
             }
         });

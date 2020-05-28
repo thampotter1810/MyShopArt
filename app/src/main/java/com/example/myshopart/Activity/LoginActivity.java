@@ -25,6 +25,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
 import java.util.ArrayList;
 
@@ -40,8 +42,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     LinearLayout linearLayout;
     ProgressBar progressBar;
     String username = "", pass = "";
-    private GoogleApiClient mGoogleSignInClient;
+    public static GoogleApiClient mGoogleSignInClient;
     int RC_SIGN_IN = 001;
+    public static int ok = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +103,17 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
     }
 
+    public static void logOutgoogle(){
+        Auth.GoogleSignInApi.signOut(mGoogleSignInClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+            }
+        });
+    }
+
     private void handleSignInResult(GoogleSignInResult result) {
         if (result.isSuccess()){
+            ok = 1;
             GoogleSignInAccount account = result.getSignInAccount();
             Toast.makeText(LoginActivity.this, ""+account.getEmail() +" "+account.getDisplayName(), Toast.LENGTH_SHORT).show();
             insertCustomer(account.getEmail(),"123456",account.getEmail());

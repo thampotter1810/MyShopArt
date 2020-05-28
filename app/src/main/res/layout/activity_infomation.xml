@@ -1,144 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:focusable="false"
     tools:context=".Activity.InfomationActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:background="#C7F2FF"
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="300dp">
 
-    </androidx.appcompat.widget.Toolbar>
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="center|bottom"
+            app:expandedTitleMarginBottom="10dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
+            <androidx.viewpager.widget.ViewPager
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                android:id="@+id/viewpagerthongtin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <androidx.appcompat.widget.Toolbar
+                app:contentScrim="?attr/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:elevation="6dp"
+                android:id="@+id/toolbar"
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#45B3DE"
+        android:layout_margin="20dp"
+        android:id="@+id/floattingactionbuttonadd"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_anchor="@id/app_bar"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_margin="2dp"
-                android:src="@android:drawable/ic_input_add"
-                android:id="@+id/imgsanpham"
-                android:layout_width="150dp"
-                android:layout_height="220dp">
-
-            </ImageView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_margin="2dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:layout_margin="2dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Tên sản phẩm"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:id="@+id/tvtensp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:text="Giá sản phẩm"
+                    android:textColor="#FC0000"
+                    android:textSize="20sp"
+                    android:id="@+id/tvgia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:weightSum="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:text="Size: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <CheckBox
+                        android:layout_margin="5dp"
+                        android:background="#F0FF85"
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:id="@+id/cbm"
+                        android:text="M"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:layout_margin="5dp"
+                        android:background="#A6FF72"
+                        android:layout_weight="1"
+                        android:id="@+id/cbl"
+                        android:text="L"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:layout_margin="5dp"
+                        android:background="#82FFFF"
+                        android:layout_weight="1"
+                        android:id="@+id/cbxl"
+                        android:text="XL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </CheckBox>
+                </LinearLayout>
+
+                <TextView
+                    android:text="Loại"
+                    android:textSize="20sp"
+                    android:id="@+id/tvloaisp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:textStyle="bold"
+                    android:text="tình trạng"
+                    android:textSize="20sp"
+                    android:id="@+id/tvtinhtrang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <Spinner
+
+                    android:layout_margin="3dp"
+                    android:padding="2dp"
+                    android:background="@drawable/spinner"
+                    android:textAlignment="center"
+                    android:id="@+id/spinner"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </Spinner>
+            </LinearLayout>
+
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp">
+
+            </View>
+
             <TextView
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="Tên sản phẩm"
+                android:text="Mô tả chi tiết"
                 android:textStyle="bold"
+                android:textColor="#2951E6"
                 android:textSize="25sp"
-                android:id="@+id/tvtensp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </TextView>
-
-            <TextView
-                android:text="Giá sản phẩm"
-                android:textColor="#FC0000"
-                android:textSize="20sp"
-                android:id="@+id/tvgia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-
-            <TextView
-                android:text="Kích thước"
-                android:textSize="20sp"
-                android:id="@+id/tvkichthuoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-
-            <TextView
-                android:text="Loại"
-                android:textSize="20sp"
-                android:id="@+id/tvloaisp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-            <TextView
-                android:textStyle="bold"
-                android:text="tình trạng"
-                android:textSize="20sp"
-                android:id="@+id/tvtinhtrang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-
-            <Spinner
-
-                android:layout_margin="3dp"
-                android:padding="2dp"
-                android:background="@drawable/spinner"
-                android:textAlignment="center"
-                android:id="@+id/spinner"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </Spinner>
-
-            <Button
-                android:background="@drawable/custom_button2"
-                android:ems="9"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:text="Thêm vào giỏ hàng"
-                android:id="@+id/btnthemgiohang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-            </Button>
+
+            </TextView>
+
+            <TextView
+                android:layout_margin="5dp"
+                android:text="Đây là thông tin chi tiết hiển thị về giới thiệu chất liệu sản phẩm cũng như các thông tin khác của sản phẩm"
+                android:textSize="20sp"
+                android:id="@+id/tvgioithieusp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <View
+                android:background="#000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp">
+
+            </View>
+            <LinearLayout
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:weightSum="5"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:hint="Nhập nhận xét của bạn"
+                    android:id="@+id/edbinhluan"
+                    android:textSize="20sp"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/imgguinhanxet"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:src="@android:drawable/ic_menu_send"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="visible"
+                        android:id="@+id/recyclernhanxet"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvtinhtrangnhanxet"
+                    android:visibility="invisible"
+                    android:text="chưa có nhận xét nào về sản phẩm này"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </FrameLayout>
         </LinearLayout>
-    </LinearLayout>
-    <View
-        android:background="#000000"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp">
+    </androidx.core.widget.NestedScrollView>
 
-    </View>
 
-    <TextView
-        android:text="Mô tả chi tiết"
-        android:textStyle="bold"
-        android:textColor="#2951E6"
-        android:textSize="25sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </TextView>
-
-    <TextView
-        android:layout_margin="5dp"
-        android:text="Đây là thông tin chi tiết hiển thị về giới thiệu chất liệu sản phẩm cũng như các thông tin khác của sản phẩm"
-        android:textSize="20sp"
-        android:id="@+id/tvgioithieusp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </TextView>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

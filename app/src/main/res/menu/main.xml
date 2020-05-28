@@ -16,9 +16,9 @@
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/menu_reload"
+        android:id="@+id/menu_donhang"
         android:orderInCategory="100"
-        android:icon="@drawable/refresh"
+        android:icon="@drawable/ic_donhang"
         android:title="@string/action_settings"
         app:showAsAction="always" />
 </menu>

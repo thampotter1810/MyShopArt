@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DonHangActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbardonhangcanhan"
+        app:title="Danh sách đơn hàng của bạn"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutdonhangcanhan"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:text="Để xem tất cả đơn hàng vui lòng nhập email của bạn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <EditText
+                android:id="@+id/edemaildonhang"
+                android:hint="Email"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+
+            <Button
+                android:ems="5"
+                android:background="@drawable/custom_button"
+                android:id="@+id/btnxacnhanemaildonhang"
+                android:textAllCaps="false"
+                android:text="Xác nhận"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </Button>
+        </LinearLayout>
+
+        <ListView
+            android:visibility="visible"
+            android:id="@+id/lvdonhangcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+    </FrameLayout>
+
+</LinearLayout>
